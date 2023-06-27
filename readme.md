@@ -1,3 +1,3 @@
-# Node Project Setup
+# Natours Application
 
-To Explore git and node project setups
+Built using modern technologies: node.js, express.js, and mongoDB
