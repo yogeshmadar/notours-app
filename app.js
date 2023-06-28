@@ -61,6 +61,9 @@ app.use(
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set security HTTP headers
+app.use(helmet());
+
 // Development logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
