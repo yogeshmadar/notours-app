@@ -41,11 +41,25 @@ app.use(cors());
 app.options('*', cors());
 // app.options('/api/v1/tours/:id', cros());
 
-// Serving static files
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Set security HTTP headers
 app.use(helmet());
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
+      baseUri: ["'self'"],
+      fontSrc: ["'self'", 'https:', 'http:', 'data:'],
+      imgSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https:', 'http:', 'blob:'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https:', 'http:'],
+      frameSrc: ["'self'", 'https:', 'http:'],
+    },
+  })
+);
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
