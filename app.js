@@ -49,8 +49,10 @@ app.use(helmet());
 
 app.use(
 helmet.contentSecurityPolicy({
- directives: {
-defaultSrc: ['self'", 'https:', 'http:', 'data:', 'ws:'], baseUri: ['self'"], styleSrc: ['self'", "'unsafe-inline"", 'https:', 'http:'],
+directives: {
+defaultSrc: ['self'", 'https:', 'http:', 'data:', 'ws:'], 
+baseUri: ['self'"], 
+styleSrc: ['self'", "'unsafe-inline"", 'https:', 'http:'],
 fontSrc: ['self'", 'https:', 'http:', 'data:'],
 scriptsrc: ['self'", 'https:', 'http:', 'blob:'],
 },
