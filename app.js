@@ -47,13 +47,13 @@ app.use(helmet());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
+      defaultSrc: ["'self'", 'https:*', 'http:*', 'data:', 'ws:'],
       baseUri: ["'self'"],
-      fontSrc: ["'self'", 'https:', 'http:', 'data:'],
+      fontSrc: ["'self'", 'https:*', 'http:*', 'data:'],
       imgSrc: ["'self'"],
-      scriptSrc: ["'self'", 'https:', 'http:', 'blob:'],
-      styleSrc: ["'self'", "'unsafe-inline'", 'https:', 'http:'],
-      frameSrc: ["'self'", 'https:', 'http:'],
+      scriptSrc: ["'self'", 'https:*', 'http:*', 'blob:'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https:*', 'http:*'],
+      frameSrc: ["'self'", 'https:*', 'http:*'],
     },
   })
 );
